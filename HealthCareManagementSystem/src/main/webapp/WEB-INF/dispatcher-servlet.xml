@@ -11,7 +11,10 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Provide support for component scanning -->
-	<context:component-scan base-package="com.healthcare.Controller" />
+	<context:component-scan
+		base-package="com.healthcare.controller, com.healthcare.service, com.healthcare.dao" />
+
+	<context:annotation-config />
 
 	<!--Provide support for conversion, formatting and validation -->
 	<mvc:annotation-driven />
