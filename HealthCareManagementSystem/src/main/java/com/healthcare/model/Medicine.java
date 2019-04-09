@@ -1,8 +1,25 @@
 package com.healthcare.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "medicine")
 public class Medicine {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "medicineId")
 	private int medicineId;
+	
+	@Column(name = "medicineName")
 	private String medicineName;
+	
+	@Column(name = "composition")
 	private String composition;
 
 	public int getMedicineId() {
@@ -36,4 +53,7 @@ public class Medicine {
 		this.composition = composition;
 	}
 
+	public Medicine() {
+		super();
+	}
 }
